@@ -17,5 +17,6 @@ namespace Persistencia.Context
             new DropCreateDatabaseIfModelChanges<EFContext>());
         }
         public DbSet<Exame> Exames { get; set; }
+        public DbSet<Exame> Consultas { get; set; }
     }
 }
