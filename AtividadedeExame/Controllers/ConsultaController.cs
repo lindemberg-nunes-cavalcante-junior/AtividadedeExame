@@ -11,7 +11,7 @@ namespace AtividadedeExame.Controllers
 {
     public class ConsultaController: Controller
     {
-        private ExameDAL Consultas = new ConsultaDAL();
+        private ConsultaDAL Consultas = new ConsultaDAL();
         // GET: Exame
         public ActionResult Index()
         {
@@ -35,7 +35,7 @@ namespace AtividadedeExame.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Consulta consulta = Consultas.ObterConsultaPorId((long)id);
-            if (exame == null)
+            if (consulta == null)
             {
                 return HttpNotFound();
             }
@@ -47,7 +47,7 @@ namespace AtividadedeExame.Controllers
         {
             if (ModelState.IsValid)
             {
-                Exames.GravarConsulta(consulta);
+                Consultas.GravarConsulta(consulta);
                 return RedirectToAction("Index");
             }
             return View(consulta);

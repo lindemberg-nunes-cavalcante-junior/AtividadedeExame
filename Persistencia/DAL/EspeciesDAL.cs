@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 
 namespace Persistencia.DAL
 {
-    public class ConsultaDAL
+    public class EspeciesDAL
     {
-        private EFContext context = new EFContext();
+        EFContext context = new EFContext();
 
-        public IQueryable<Consulta> ObterConsulta()
+        public IQueryable<Especie> ObterEspecie()
         {
-            return context.Consultas.OrderBy(b => b.Id);
+            return context.Especies.OrderBy(b => b.Id);
         }
-        public Consulta ObterConsultaPorId(long id)
+        public Especie ObterEspeciePorId(long id)
         {
-            return context.Consultas.Where(f => f.Id == id).First();
+            return context.Especies.Where(f => f.Id == id).First();
         }
-        public void GravarConsulta(Consulta a)
+        public void GravarEspecie(Especie a)
         {
             if (a.Id == 0)
             {
-                context.Consultas.Add(a);
+                context.Especies.Add(a);
             }
             else
             {
@@ -33,11 +33,11 @@ namespace Persistencia.DAL
             }
             context.SaveChanges();
         }
-        public Consulta EliminarConsulta(Consulta consulta)
+        public Exame EliminarEspecie(Especie a)
         {
-            context.Consultas.Remove(consulta);
+            context.Especies.Remove(a);
             context.SaveChanges();
-            return consulta;
+            return a;
         }
     }
 }
