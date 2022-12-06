@@ -12,9 +12,11 @@ namespace AtividadedeExame.Controllers
     public class ExameController : Controller
     {
         private ExameDAL Exames = new ExameDAL();
+        private ConsultaDAL consultas = new ConsultaDAL();
         // GET: Exame
         public ActionResult Index()
         {
+            
             return View(Exames.ObterExames());
         }
         public ActionResult Create()

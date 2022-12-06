@@ -8,7 +8,7 @@ namespace Modelo
 {
     public class Consulta
     {
-        public long Id;
+        public long? Id;
         public DateTime data_hora;
         public string sintomas;
         public List<Exame> exames;

@@ -8,7 +8,7 @@ namespace Modelo
 {
     public class Pet
     {
-        public long id { get; set; }
+        public long? id { get; set; }
         public string nome { get; set; }
         public int idade { get; set; }
         public int sexo { get; set; }

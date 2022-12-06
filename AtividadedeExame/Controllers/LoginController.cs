@@ -19,7 +19,7 @@ namespace AtividadedeExame.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(Usuario usuario)
         {
-            return;
+            return null;
         }
     }
 }
