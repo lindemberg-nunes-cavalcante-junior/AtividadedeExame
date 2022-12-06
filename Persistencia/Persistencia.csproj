@@ -55,14 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\EFContext.cs" />
-    <Compile Include="DAL\ClientesDAL.cs" />
     <Compile Include="DAL\ConsultaDAL.cs" />
-    <Compile Include="DAL\EnderecoDAL.cs" />
-    <Compile Include="DAL\EspeciesDAL.cs" />
     <Compile Include="DAL\ExameDAL.cs" />
-    <Compile Include="DAL\PetDAL.cs" />
-    <Compile Include="DAL\TelefoneDAL.cs" />
-    <Compile Include="DAL\VeterinarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

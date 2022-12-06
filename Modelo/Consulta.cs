@@ -8,9 +8,9 @@ namespace Modelo
 {
     public class Consulta
     {
-        public long? Id;
-        public DateTime data_hora;
-        public string sintomas;
-        public List<Exame> exames;
+        public long? Id { get; set; }
+        DateTime data_hora { get; set; }
+        public string Sintomas { get; set; }
+        public List<Exame> exames { get; set; }
     }
 }

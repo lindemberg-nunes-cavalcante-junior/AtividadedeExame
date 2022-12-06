@@ -13,13 +13,13 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
-        public IQueryable<Consulta> ObterConsulta()
+        public IQueryable<Consulta> ObterConsultas()
         {
             return context.Consultas.OrderBy(b => b.Id);
         }
-        public Consulta ObterConsultaPorId(long id)
+        public Exame ObterConsultaPorId(long Id)
         {
-            return context.Consultas.Where(f => f.Id == id).First();
+            return context.Exames.Where(f => f.Id == Id).First();
         }
         public void GravarConsulta(Consulta a)
         {

@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
+    <title>ExameDetails</title>
 </head>
 <body>
     <div>
@@ -17,18 +17,18 @@
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.descrição)
+                @Html.DisplayNameFor(model => model.descricao)
             </dt>
     
             <dd>
-                @Html.DisplayFor(model => model.descrição)
+                @Html.DisplayFor(model => model.descricao)
             </dd>
     
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Edit", "ExameEdit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "IndexExame")
     </p>
 </body>
 </html>

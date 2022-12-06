@@ -8,7 +8,7 @@ namespace Modelo
 {
     public class Exame
     {
-        public long? Id { get; set; }
-        public string descrição { get; set; }
+        public long Id { get; set; }
+        public string descricao { get; set; }
     }
 }

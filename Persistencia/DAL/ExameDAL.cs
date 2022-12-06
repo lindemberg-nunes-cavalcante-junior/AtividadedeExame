@@ -17,9 +17,9 @@ namespace Persistencia.DAL
         {
             return context.Exames.OrderBy(b => b.Id);
         }
-        public Exame ObterExamePorId(long id)
+        public Exame ObterExamePorId(long Id)
         {
-            return context.Exames.Where(f => f.Id == id).First();
+            return context.Exames.Where(f => f.Id == Id).First();
         }
         public void GravarExame(Exame a)
         {
