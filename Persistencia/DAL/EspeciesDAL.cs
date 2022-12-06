@@ -33,7 +33,7 @@ namespace Persistencia.DAL
             }
             context.SaveChanges();
         }
-        public Exame EliminarEspecie(Especie a)
+        public Especie EliminarEspecie(Especie a)
         {
             context.Especies.Remove(a);
             context.SaveChanges();
