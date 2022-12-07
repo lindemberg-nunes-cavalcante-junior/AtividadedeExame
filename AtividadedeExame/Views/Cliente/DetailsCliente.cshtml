@@ -1,0 +1,58 @@
+﻿@model Modelo.Cliente
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DetailsCliente</title>
+</head>
+<body>
+    <div>
+        <h4>Cliente</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.cpf)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.cpf)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.senha)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.senha)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "EditCliente", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "IndexCliente")
+    </p>
+</body>
+</html>

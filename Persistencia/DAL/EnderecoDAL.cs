@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 
 namespace Persistencia.DAL
 {
-    public class ClienteDAL
+    public class EnderecoDAL
     {
         private EFContext context = new EFContext();
 
-        public IQueryable<Cliente> ObterClientes()
+        public IQueryable<Endereco> ObterEnderecos()
         {
-            return context.Clientes.OrderBy(b => b.Id);
+            return context.Enderecos.OrderBy(b => b.EnderecoId);
         }
-        public Cliente ObterClientePorId(long Id)
+        public Endereco ObterEnderecoPorId(long Id)
         {
-            return context.Clientes.Where(f => f.Id == Id).First();
+            return context.Enderecos.Where(f => f.EnderecoId == Id).First();
         }
-        public void GravarCliente(Cliente a)
+        public void GravarEndereco(Endereco a)
         {
-            if (a.Id == 0)
+            if (a.EnderecoId == 0)
             {
-                context.Clientes.Add(a);
+                context.Enderecos.Add(a);
             }
             else
             {
@@ -33,11 +33,11 @@ namespace Persistencia.DAL
             }
             context.SaveChanges();
         }
-        public Cliente EliminarCliente(Cliente cliente)
+        public Endereco EliminarEndereco(Endereco endereco)
         {
-            context.Clientes.Remove(cliente);
+            context.Enderecos.Remove(endereco);
             context.SaveChanges();
-            return cliente;
+            return endereco;
         }
     }
 }

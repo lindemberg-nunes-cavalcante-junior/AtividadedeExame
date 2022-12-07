@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 
 namespace Persistencia.DAL
 {
-    public class ClienteDAL
+    public class TelefoneDAL
     {
         private EFContext context = new EFContext();
 
-        public IQueryable<Cliente> ObterClientes()
+        public IQueryable<Telefone> ObterTelefones()
         {
-            return context.Clientes.OrderBy(b => b.Id);
+            return context.Telefones.OrderBy(b => b.TelefoneId);
         }
-        public Cliente ObterClientePorId(long Id)
+        public Telefone ObterVeterinarioPorId(long Id)
         {
-            return context.Clientes.Where(f => f.Id == Id).First();
+            return context.Telefones.Where(f => f.TelefoneId == Id).First();
         }
-        public void GravarCliente(Cliente a)
+        public void GravarTelefone(Telefone a)
         {
-            if (a.Id == 0)
+            if (a.TelefoneId == 0)
             {
-                context.Clientes.Add(a);
+                context.Telefones.Add(a);
             }
             else
             {
@@ -33,11 +33,11 @@ namespace Persistencia.DAL
             }
             context.SaveChanges();
         }
-        public Cliente EliminarCliente(Cliente cliente)
+        public Telefone EliminarTelefone(Telefone telefone)
         {
-            context.Clientes.Remove(cliente);
+            context.Telefones.Remove(telefone);
             context.SaveChanges();
-            return cliente;
+            return telefone;
         }
     }
 }
