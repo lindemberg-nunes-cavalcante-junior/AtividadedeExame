@@ -1,0 +1,48 @@
+﻿@model Modelo.Pet
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DetailsPet</title>
+</head>
+<body>
+    <div>
+        <h4>Pet</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nome)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nome)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.idade)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.idade)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Especie)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EspecieId)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PetId }) |
+        @Html.ActionLink("Back to List", "IndexPet")
+    </p>
+</body>
+</html>

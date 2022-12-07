@@ -13,7 +13,7 @@
 </head>
 <body>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Create New", "CreatePet")
     </p>
     <table class="table">
         <tr>
@@ -24,7 +24,12 @@
                 @Html.DisplayNameFor(model => model.idade)
             </th>
             <th>
+
                 @Html.DisplayNameFor(model => model.sexo)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Especie)
             </th>
         </tr>
     
@@ -40,9 +45,12 @@
             @Html.DisplayFor(modelItem => item.sexo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.PetId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.PetId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.PetId })
+            @Html.DisplayFor(modelItem => item.EspecieId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditPet", new { id = item.PetId }) |
+            @Html.ActionLink("Details", "DetailsPet", new { id = item.PetId }) |
+            @Html.ActionLink("Delete", "DeletePet", new { id = item.PetId })
         </td>
     </tr>
     }

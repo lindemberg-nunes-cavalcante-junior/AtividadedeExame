@@ -21,7 +21,7 @@ namespace Persistencia.DAL
         {
             return context.Pets.Where(f => f.PetId == Id).First();
         }
-        public void GravarPets(Pet a)
+        public void GravarPet(Pet a)
         {
             if (a.PetId == 0)
             {

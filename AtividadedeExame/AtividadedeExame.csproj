@@ -162,6 +162,10 @@
     <Content Include="Views\Cliente\EditCliente.cshtml" />
     <Content Include="Views\Cliente\DeleteCliente.cshtml" />
     <Content Include="Views\Animal\IndexPet.cshtml" />
+    <Content Include="Views\Animal\CreatePet.cshtml" />
+    <Content Include="Views\Animal\DetailsPet.cshtml" />
+    <Content Include="Views\Animal\EditPet.cshtml" />
+    <Content Include="Views\Animal\DeletePet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
