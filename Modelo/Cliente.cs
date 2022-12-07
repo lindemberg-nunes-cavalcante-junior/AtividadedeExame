@@ -9,8 +9,9 @@ namespace Modelo
     public class Cliente:Usuario
     {
         public string cpf { get; set; }
-        public Telefone telefone;
-        public Endereco endereco;
-        public Pet pet;
+        public long? TelefoneId;
+        public long? EnderecoId;
+        public Telefone Telefone;
+        public Endereco Endereco;
     }
 }

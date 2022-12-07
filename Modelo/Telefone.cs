@@ -8,10 +8,8 @@ namespace Modelo
 {
     public class Telefone
     {
-        public long Id { get; set; }
+        public long TelefoneId { get; set; }
         public string ddd { get; set; }
         public string numero { get; set; }
-        public Cliente cliente;
-        public long? ClienteId;
     }
 }

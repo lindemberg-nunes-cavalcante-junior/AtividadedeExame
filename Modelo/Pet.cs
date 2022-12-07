@@ -8,10 +8,11 @@ namespace Modelo
 {
     public class Pet
     {
-        public long Id { get; set; }
+        public long PetId { get; set; }
         public string nome { get; set; }
         public int idade { get; set; }
-        public Cliente cliente;
+        public long? Id;
+        public Cliente Cliente;
         public TipoSexo sexo;
     }
 }

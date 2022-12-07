@@ -20,5 +20,8 @@ namespace Persistencia.Context
         public DbSet<Consulta> Consultas { get; set; }
         public DbSet<Especie> Especies { get; set; }
         public DbSet<Veterinario> Veterinarios { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Telefone> Telefones { get; set; }
     }
 }
