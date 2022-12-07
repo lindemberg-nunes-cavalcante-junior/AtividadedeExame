@@ -108,7 +108,7 @@ namespace AtividadedeExame.Controllers
             ViewBag.Exame = new SelectList(Exames.ObterExames());
             return View(Consultas.ObterConsultas());
         }
-        public ActionResult ExameCreate()
+        public ActionResult ConsultaCreate()
         {
             return View();
         }
