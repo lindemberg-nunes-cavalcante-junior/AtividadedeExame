@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 
 namespace Persistencia.DAL
 {
-    public class EnderecoDAL
+    public class PetDAL
     {
         private EFContext context = new EFContext();
 
-        public IQueryable<Endereco> ObterEnderecos()
+        public IQueryable<Pet> ObterPets()
         {
-            return context.Enderecos.OrderBy(b => b.EnderecoId);
+            return context.Pets.OrderBy(b => b.PetId);
         }
-        public Endereco ObterEnderecoPorId(long Id)
+        public Pet ObterPetPorId(long Id)
         {
-            return context.Enderecos.Where(f => f.EnderecoId == Id).First();
+            return context.Pets.Where(f => f.PetId == Id).First();
         }
-        public void GravarEndereco(Endereco a)
+        public void GravarPets(Pet a)
         {
-            if (a.EnderecoId == 0)
+            if (a.PetId == 0)
             {
-                context.Enderecos.Add(a);
+                context.Pets.Add(a);
             }
             else
             {
@@ -33,11 +33,11 @@ namespace Persistencia.DAL
             }
             context.SaveChanges();
         }
-        public Endereco EliminarEndereco(Endereco endereco)
+        public Pet Eliminarpet(Pet pet)
         {
-            context.Enderecos.Remove(endereco);
+            context.Pets.Remove(pet);
             context.SaveChanges();
-            return endereco;
+            return pet;
         }
     }
 }

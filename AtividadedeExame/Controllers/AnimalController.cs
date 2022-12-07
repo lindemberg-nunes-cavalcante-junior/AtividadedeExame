@@ -12,6 +12,11 @@ namespace AtividadedeExame.Controllers
     public class AnimalController : Controller
     {
         private EspecieDAL Especies = new EspecieDAL();
+        private PetDAL Pets = new PetDAL();
+       public ActionResult IndexPet()
+        {
+            return View(Pets.ObterPets());
+        }
         // GET: Animal
         public ActionResult IndexEspecie()
         {

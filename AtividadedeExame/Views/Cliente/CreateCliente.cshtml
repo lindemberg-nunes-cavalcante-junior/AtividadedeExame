@@ -15,12 +15,12 @@
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    
-    
-    @using (Html.BeginForm()) 
+
+
+    @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        
+
         <div class="form-horizontal">
             <h4>Cliente</h4>
             <hr />
@@ -32,7 +32,7 @@
                     @Html.ValidationMessageFor(model => model.cpf, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.nome, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -40,7 +40,7 @@
                     @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.senha, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -48,7 +48,7 @@
                     @Html.ValidationMessageFor(model => model.senha, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -56,7 +56,6 @@
                     @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Create" class="btn btn-default" />
@@ -64,9 +63,10 @@
             </div>
         </div>
     }
-    
+
     <div>
         @Html.ActionLink("Back to List", "IndexCliente")
     </div>
 </body>
+
 </html>

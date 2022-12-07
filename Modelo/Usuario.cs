@@ -8,7 +8,7 @@ namespace Modelo
 {
     public class Usuario
     {
-        public long Id { get; set; }
+        public  long? Id { get; set; }
         public string nome { get; set; }
         public string senha { get; set; } 
         public string email { get; set; }

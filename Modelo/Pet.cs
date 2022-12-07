@@ -11,7 +11,7 @@ namespace Modelo
         public long PetId { get; set; }
         public string nome { get; set; }
         public int idade { get; set; }
-        public long? Id;
+
         public Cliente Cliente;
         public TipoSexo sexo;
     }

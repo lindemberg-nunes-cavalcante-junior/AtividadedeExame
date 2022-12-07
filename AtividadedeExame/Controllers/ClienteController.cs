@@ -12,12 +12,11 @@ namespace AtividadedeExame.Controllers
     public class ClienteController : Controller
     {
         private ClienteDAL Clientes = new ClienteDAL();
-        private TelefoneDAL Telefones = new TelefoneDAL();
-        private EnderecoDAL Enderecos = new EnderecoDAL();
         // GET: Cliente
         public ActionResult IndexCliente()
         {
-            return View(Clientes.ObterClientes());
+            var clientes = Clientes.ObterClientes();
+            return View(clientes);
         }
         public ActionResult CreateCliente()
         {

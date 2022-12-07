@@ -8,8 +8,9 @@ namespace Modelo
 {
     public class Telefone
     {
-        public long TelefoneId { get; set; }
+        public long? TelefoneId { get; set; }
         public string ddd { get; set; }
         public string numero { get; set; }
+        public virtual ICollection<Cliente> Produtos { get; set; }
     }
 }
