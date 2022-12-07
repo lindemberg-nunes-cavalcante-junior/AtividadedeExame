@@ -117,6 +117,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AnimalController.cs" />
+    <Compile Include="Controllers\PrestadoresController.cs" />
     <Compile Include="Controllers\ProcedimentosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -143,7 +145,16 @@
     <Content Include="Views\Procedimentos\ExameDetails.cshtml" />
     <Content Include="Views\Procedimentos\ExameEdit.cshtml" />
     <Content Include="Views\Procedimentos\ExameDelete.cshtml" />
-    <Content Include="Views\Procedimentos\IndexConsulta.cshtml" />
+    <Content Include="Views\Animal\IndexEspecie.cshtml" />
+    <Content Include="Views\Animal\CreateEspecie.cshtml" />
+    <Content Include="Views\Animal\DetailsEspecie.cshtml" />
+    <Content Include="Views\Animal\EditEspecie.cshtml" />
+    <Content Include="Views\Animal\DeleteEspecie.cshtml" />
+    <Content Include="Views\Prestadores\IndexVeterinario.cshtml" />
+    <Content Include="Views\Prestadores\CreateVeterinario.cshtml" />
+    <Content Include="Views\Prestadores\DetailsVeterinario.cshtml" />
+    <Content Include="Views\Prestadores\EditVeterinario.cshtml" />
+    <Content Include="Views\Prestadores\DeleteVeterinario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -154,7 +165,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Animal\" />
     <Folder Include="Views\Exame\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
@@ -193,13 +203,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

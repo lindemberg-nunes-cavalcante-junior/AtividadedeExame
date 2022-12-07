@@ -103,7 +103,7 @@ namespace AtividadedeExame.Controllers
 
         //Parte de Consulta
 
-        public ActionResult IndexConsulta()
+        /*public ActionResult IndexConsulta()
         {
             ViewBag.Exame = new SelectList(Exames.ObterExames());
             return View(Consultas.ObterConsultas());
@@ -180,6 +180,6 @@ namespace AtividadedeExame.Controllers
             Exame exame = Exames.ObterExamePorId((long)Id);
             Exames.EliminarExame(exame);
             return RedirectToAction("IndexExame");
-        }
+        }*/
     }
 }

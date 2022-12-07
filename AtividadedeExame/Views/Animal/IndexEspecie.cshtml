@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Modelo.Especie>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IndexEspecie</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "CreateEspecie")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nome)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditEspecie", new { id=item.Id }) |
+                @Html.ActionLink("Details", "DetailsEspecie", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "DeleteEspecie", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

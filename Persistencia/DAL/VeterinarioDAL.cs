@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 
 namespace Persistencia.DAL
 {
-    public class ConsultaDAL
+    public class VeterinarioDAL
     {
         private EFContext context = new EFContext();
 
-        public IQueryable<Consulta> ObterConsultas()
+        public IQueryable<Veterinario> ObterVeterinarios()
         {
-            return context.Consultas.OrderBy(b => b.Id);
+            return context.Veterinarios.OrderBy(b => b.Id);
         }
-        public Consulta ObterConsultaPorId(long Id)
+        public Veterinario ObterVeterinarioPorId(long Id)
         {
-            return context.Consultas.Where(f => f.Id == Id).First();
+            return context.Veterinarios.Where(f => f.Id == Id).First();
         }
-        public void GravarConsulta(Consulta a)
+        public void GravarVeterinario(Veterinario a)
         {
             if (a.Id == 0)
             {
-                context.Consultas.Add(a);
+                context.Veterinarios.Add(a);
             }
             else
             {
@@ -33,11 +33,11 @@ namespace Persistencia.DAL
             }
             context.SaveChanges();
         }
-        public Consulta EliminarConsulta(Consulta consulta)
+        public Veterinario EliminarVeterinario(Veterinario veterinario)
         {
-            context.Consultas.Remove(consulta);
+            context.Veterinarios.Remove(veterinario);
             context.SaveChanges();
-            return consulta;
+            return veterinario;
         }
     }
 }
