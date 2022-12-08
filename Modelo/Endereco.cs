@@ -14,6 +14,7 @@ namespace Modelo
         public string cidade { get; set; }
         public string bairro { get; set; }
         public string estado { get; set; }
-        public virtual ICollection<Cliente> Produtos { get; set; }
+        public long UsuarioId { get; set; }
+        public Cliente Cliente { get; set; }
     }
 }

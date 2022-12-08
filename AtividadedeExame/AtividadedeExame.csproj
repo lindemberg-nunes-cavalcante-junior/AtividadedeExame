@@ -166,6 +166,7 @@
     <Content Include="Views\Animal\DetailsPet.cshtml" />
     <Content Include="Views\Animal\EditPet.cshtml" />
     <Content Include="Views\Animal\DeletePet.cshtml" />
+    <Content Include="Views\Cliente\IndexEndereco.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

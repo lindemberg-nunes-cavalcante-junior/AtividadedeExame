@@ -12,6 +12,12 @@ namespace AtividadedeExame.Controllers
     public class ClienteController : Controller
     {
         private ClienteDAL Clientes = new ClienteDAL();
+        private EnderecoDAL Enderecos = new EnderecoDAL();
+
+        public ActionResult IndexEndereco() {
+            ViewBag.UsuarioId = new SelectList(Clientes.ObterClientes(), "Id", "nome");
+            return View(Enderecos.ObterEnderecos());
+        }
         // GET: Cliente
         public ActionResult IndexCliente()
         {
