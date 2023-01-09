@@ -1,5 +1,5 @@
 ﻿using Modelo;
-using Persistencia.Context;
+using Persistencia.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,29 +12,29 @@ namespace Persistencia.DAL
     public class VeterinarioDAL
     {
         private EFContext context = new EFContext();
-
-        public IQueryable<Veterinario> ObterVeterinarios()
+        public IQueryable<Veterinario> ObterVeterinariosClassificadosPorNome()
         {
-            return context.Veterinarios.OrderBy(b => b.Id);
+            return context.Veterinarios.OrderBy(b => b.Nome);
         }
-        public Veterinario ObterVeterinarioPorId(long Id)
+        public Veterinario ObterVeterinarioPorId(long id)
         {
-            return context.Veterinarios.Where(f => f.Id == Id).First();
+            return context.Veterinarios.Where(f => f.UsuarioId == id).First();
         }
-        public void GravarVeterinario(Veterinario a)
+        public void GravarVeterinario(Veterinario veterinario)
         {
-            if (a.Id == 0)
+            if (veterinario.UsuarioId == 0)
             {
-                context.Veterinarios.Add(a);
+                context.Veterinarios.Add(veterinario);
             }
             else
             {
-                context.Entry(a).State = EntityState.Modified;
+                context.Entry(veterinario).State = EntityState.Modified;
             }
             context.SaveChanges();
         }
-        public Veterinario EliminarVeterinario(Veterinario veterinario)
+        public Veterinario EliminarVeterinarioPorId(long id)
         {
+            Veterinario veterinario = ObterVeterinarioPorId(id);
             context.Veterinarios.Remove(veterinario);
             context.SaveChanges();
             return veterinario;

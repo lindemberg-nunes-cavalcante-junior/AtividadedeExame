@@ -1,43 +1,40 @@
 ﻿using Modelo;
-using Persistencia.Context;
-using System;
-using System.Collections.Generic;
+using Persistencia.Contexts;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Persistencia.DAL
 {
     public class ClienteDAL
     {
         private EFContext context = new EFContext();
-
-        public IQueryable<Cliente> ObterClientes()
+        public IQueryable<Cliente> ObterClientesClassificadosPorCPF()
         {
-            return context.Clientes.Include(a => a.Enderecos).OrderBy(b => b.Id);
+            return context.Clientes.OrderBy(b => b.Cpf);
         }
-        public Cliente ObterClientePorId(long Id)
+        public Cliente ObterClientePorId(long id)
         {
-            return context.Clientes.Where(f => f.Id == Id).First();
+            return context.Clientes.Where(f => f.UsuarioId == id).First();
         }
-        public void GravarCliente(Cliente a)
+        public void GravarCliente(Cliente cliente)
         {
-            if (a.Id == 0)
+            if (cliente.UsuarioId == 0)
             {
-                context.Clientes.Add(a);
+                context.Clientes.Add(cliente);
             }
             else
             {
-                context.Entry(a).State = EntityState.Modified;
+                context.Entry(cliente).State = EntityState.Modified;
             }
             context.SaveChanges();
         }
-        public Cliente EliminarCliente(Cliente cliente)
+        public Cliente EliminarClientePorId(long id)
         {
+            Cliente cliente = ObterClientePorId(id);
             context.Clientes.Remove(cliente);
             context.SaveChanges();
             return cliente;
         }
+
     }
 }

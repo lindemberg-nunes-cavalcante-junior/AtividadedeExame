@@ -37,6 +37,7 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,14 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
-    <Compile Include="Consulta.cs" />
-    <Compile Include="Endereco.cs" />
-    <Compile Include="Especie.cs" />
-    <Compile Include="Exame.cs" />
-    <Compile Include="Pet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Telefone.cs" />
-    <Compile Include="TipoSexo.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Veterinario.cs" />
   </ItemGroup>

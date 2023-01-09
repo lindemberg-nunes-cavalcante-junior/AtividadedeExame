@@ -117,10 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AnimalController.cs" />
-    <Compile Include="Controllers\ClienteController.cs" />
-    <Compile Include="Controllers\PrestadoresController.cs" />
-    <Compile Include="Controllers\ProcedimentosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -141,32 +137,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
-    <Content Include="Views\Procedimentos\IndexExame.cshtml" />
-    <Content Include="Views\Procedimentos\ExameCreate.cshtml" />
-    <Content Include="Views\Procedimentos\ExameDetails.cshtml" />
-    <Content Include="Views\Procedimentos\ExameEdit.cshtml" />
-    <Content Include="Views\Procedimentos\ExameDelete.cshtml" />
-    <Content Include="Views\Animal\IndexEspecie.cshtml" />
-    <Content Include="Views\Animal\CreateEspecie.cshtml" />
-    <Content Include="Views\Animal\DetailsEspecie.cshtml" />
-    <Content Include="Views\Animal\EditEspecie.cshtml" />
-    <Content Include="Views\Animal\DeleteEspecie.cshtml" />
-    <Content Include="Views\Prestadores\IndexVeterinario.cshtml" />
-    <Content Include="Views\Prestadores\CreateVeterinario.cshtml" />
-    <Content Include="Views\Prestadores\DetailsVeterinario.cshtml" />
-    <Content Include="Views\Prestadores\EditVeterinario.cshtml" />
-    <Content Include="Views\Prestadores\DeleteVeterinario.cshtml" />
-    <Content Include="Views\Cliente\IndexCliente.cshtml" />
-    <Content Include="Views\Cliente\CreateCliente.cshtml" />
-    <Content Include="Views\Cliente\DetailsCliente.cshtml" />
-    <Content Include="Views\Cliente\EditCliente.cshtml" />
-    <Content Include="Views\Cliente\DeleteCliente.cshtml" />
-    <Content Include="Views\Animal\IndexPet.cshtml" />
-    <Content Include="Views\Animal\CreatePet.cshtml" />
-    <Content Include="Views\Animal\DetailsPet.cshtml" />
-    <Content Include="Views\Animal\EditPet.cshtml" />
-    <Content Include="Views\Animal\DeletePet.cshtml" />
-    <Content Include="Views\Cliente\IndexEndereco.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -176,9 +146,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Exame\" />
-    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">

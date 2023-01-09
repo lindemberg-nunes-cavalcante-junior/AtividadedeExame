@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class Veterinario:Usuario
+    public class Veterinario : Usuario
     {
-        public string cmrv { get; set; }
+        public string crmv { get; set; }
     }
 }
