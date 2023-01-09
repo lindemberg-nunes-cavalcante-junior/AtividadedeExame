@@ -1,47 +1,50 @@
-﻿using System.Net;
-using System.Web.Mvc;
-using Modelo;
+﻿using Modelo;
 using Persistencia.DAL;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
 
 namespace AtividadedeExame.Controllers
 {
-    public class ClientesController : Controller
+    public class VeterinariosController : Controller
     {
-        private ClienteDAL clienteDAL = new ClienteDAL();
-        private ActionResult ObterVisaoClientePorId(long? id)
+        private VeterinarioDAL veterinarioDAL = new VeterinarioDAL();
+        private ActionResult ObterVisaoVeterinarioPorId(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = clienteDAL.ObterClientePorId((long)id);
-            if (cliente == null)
+            Veterinario veterinario = veterinarioDAL.ObterVeterinarioPorId((long)id);
+            if (veterinario == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return View(veterinario);
         }
-        public ActionResult GravarCliente(Cliente cliente)
+        private ActionResult GravarVeterinario(Veterinario veterinario)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    clienteDAL.GravarCliente(cliente);
+                    veterinarioDAL.GravarVeterinario(veterinario);
                     return RedirectToAction("index");
                 }
-                return View(cliente);
+                return View(veterinario);
             }
             catch
             {
-                return View(cliente);
+                return View(veterinario);
             }
         }
-        // GET: Clientes
+        // GET: Veterinarios
         public ActionResult Index()
         {
-            return View(clienteDAL.ObterClientesClassificadosPorCPF());
-            
+            return View(veterinarioDAL.ObterVeterinariosClassificadosPorNome());
         }
         // Create get
         public ActionResult Create()
@@ -51,34 +54,32 @@ namespace AtividadedeExame.Controllers
         // Create post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Cliente cliente)
+        public ActionResult Create(Veterinario veterinario)
         {
-            
-            GravarCliente(cliente);
-            return RedirectToAction("../Telefones/Create", new { idCliente = cliente.UsuarioId });
+            return GravarVeterinario(veterinario);
         }
         //Edit alone
         public ActionResult Edit(long? id)
         {
-            return ObterVisaoClientePorId(id);
+            return ObterVisaoVeterinarioPorId(id);
         }
         //Edit post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Cliente cliente)
+        public ActionResult Edit(Veterinario veterinario)
         {
-            return GravarCliente(cliente);
+            return GravarVeterinario(veterinario);
 
         }
         //Details alone
         public ActionResult Details(long? id)
         {
-            return ObterVisaoClientePorId(id);
+            return ObterVisaoVeterinarioPorId(id);
         }
         //Delete alone
         public ActionResult Delete(long? id)
         {
-            return ObterVisaoClientePorId(id);
+            return ObterVisaoVeterinarioPorId(id);
         }
         //Delete post
         [HttpPost]
@@ -87,8 +88,8 @@ namespace AtividadedeExame.Controllers
         {
             try
             {
-                Cliente cliente = clienteDAL.EliminarClientePorId(id);
-                TempData["Message"] = "Cliente " + cliente.Cpf.ToUpper() + " foi removido";
+                Veterinario veterinario = veterinarioDAL.EliminarVeterinarioPorId(id);
+
                 return RedirectToAction("index");
             }
             catch

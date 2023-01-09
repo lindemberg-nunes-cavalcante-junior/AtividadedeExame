@@ -1,47 +1,50 @@
-﻿using System.Net;
-using System.Web.Mvc;
-using Modelo;
+﻿using Modelo;
 using Persistencia.DAL;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
 
 namespace AtividadedeExame.Controllers
 {
-    public class ClientesController : Controller
+    public class SecretariosController : Controller
     {
-        private ClienteDAL clienteDAL = new ClienteDAL();
-        private ActionResult ObterVisaoClientePorId(long? id)
+        private SecretarioDAL secretarioDAL = new SecretarioDAL();
+        private ActionResult ObterVisaoSecretarioPorId(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = clienteDAL.ObterClientePorId((long)id);
-            if (cliente == null)
+            Secretario secretario = secretarioDAL.ObterSecretarioPorId((long)id);
+            if (secretario == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return View(secretario);
         }
-        public ActionResult GravarCliente(Cliente cliente)
+        private ActionResult GravarSecretario(Secretario secretario)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    clienteDAL.GravarCliente(cliente);
+                    secretarioDAL.GravarSecretario(secretario);
                     return RedirectToAction("index");
                 }
-                return View(cliente);
+                return View(secretario);
             }
             catch
             {
-                return View(cliente);
+                return View(secretario);
             }
         }
-        // GET: Clientes
+        // GET: Secretarios
         public ActionResult Index()
         {
-            return View(clienteDAL.ObterClientesClassificadosPorCPF());
-            
+            return View(secretarioDAL.ObterSecretariosClassificadosPorNome());
         }
         // Create get
         public ActionResult Create()
@@ -51,34 +54,32 @@ namespace AtividadedeExame.Controllers
         // Create post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Cliente cliente)
+        public ActionResult Create(Secretario secretario)
         {
-            
-            GravarCliente(cliente);
-            return RedirectToAction("../Telefones/Create", new { idCliente = cliente.UsuarioId });
+            return GravarSecretario(secretario);
         }
         //Edit alone
         public ActionResult Edit(long? id)
         {
-            return ObterVisaoClientePorId(id);
+            return ObterVisaoSecretarioPorId(id);
         }
         //Edit post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Cliente cliente)
+        public ActionResult Edit(Secretario secretario)
         {
-            return GravarCliente(cliente);
+            return GravarSecretario(secretario);
 
         }
         //Details alone
         public ActionResult Details(long? id)
         {
-            return ObterVisaoClientePorId(id);
+            return ObterVisaoSecretarioPorId(id);
         }
         //Delete alone
         public ActionResult Delete(long? id)
         {
-            return ObterVisaoClientePorId(id);
+            return ObterVisaoSecretarioPorId(id);
         }
         //Delete post
         [HttpPost]
@@ -87,8 +88,7 @@ namespace AtividadedeExame.Controllers
         {
             try
             {
-                Cliente cliente = clienteDAL.EliminarClientePorId(id);
-                TempData["Message"] = "Cliente " + cliente.Cpf.ToUpper() + " foi removido";
+                Secretario secretario = secretarioDAL.EliminarSecretarioPorId(id);
                 return RedirectToAction("index");
             }
             catch
